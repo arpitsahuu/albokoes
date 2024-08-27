@@ -37,7 +37,7 @@ const page = () => {
           <div className="flex justify-center mb-14 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
             {
               productList && productList?.map((item, index) => (
-                <MainCard image={"https://pagedone.io/asset/uploads/1696244553.png"} date={"20.07.2024"} CardTitle={"hello word"} discription={" To achieve the behavior of truncating the description after 3 lines and appending ellipses (...), you can use CSS to handle the text overflow. This can be done by setting a maximum number of lines for the description and then hiding the overflow with ellipses using the line-clamp utility in Tailwind CSS."} category={"innovation"} />
+                <MainCard key={item.title} image={"https://pagedone.io/asset/uploads/1696244553.png"} date={"20.07.2024"} CardTitle={"hello word"} discription={" To achieve the behavior of truncating the description after 3 lines and appending ellipses (...), you can use CSS to handle the text overflow. This can be done by setting a maximum number of lines for the description and then hiding the overflow with ellipses using the line-clamp utility in Tailwind CSS."} category={"innovation"} />
               ))
             }
           </div>

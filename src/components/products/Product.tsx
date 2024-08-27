@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-
 const Product= () => {
     return (
         <div>
@@ -13,7 +11,7 @@ const Product= () => {
                             Why quit now?
                         </h1>
                         <p className="mt-6 text-lg text-gray-700">
-                            You've come way farther than you expected
+                            You&apos;ve come way farther than you expected
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-2">
                             <button className="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">
@@ -235,8 +233,6 @@ const Product= () => {
                     </div>
                 </div>
             </aside>
-
-
         </div>
     )
 }
