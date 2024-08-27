@@ -57,7 +57,7 @@ const Productslistss = () => {
                     <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16">
                     {
                         products && products?.map((product,item) =>(
-                            <ProductCard image={product.image} title={product.title} discription={product.description} category='product' />
+                            <ProductCard image={product.image} title={product.title} discription={product.description} category='product' key={product.title} />
                         ))
                     }    
                     </div>
