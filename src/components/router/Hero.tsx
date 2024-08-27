@@ -25,7 +25,7 @@ const Hero = () => {
           <FaArrowRight /> Products & Ideas
         </Link>
         <Link
-          href={"news"}
+          href={"/newsandevents"}
           className="flex gap-2 items-center border border-green-400 rounded-full px-4 py-2"
         >
           {" "}

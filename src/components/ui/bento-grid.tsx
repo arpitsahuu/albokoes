@@ -44,12 +44,12 @@ export const BentoGridItem = ({
       ? "#bfe9e6"
       : "bg-gray-100"; // default background
 
-  const textColor = isFullBackground ? "text-white" : "text-neutral-600 dark:text-neutral-200";
+  const textColor = isFullBackground ? "text-white" : "text-neutral-600";
   
   return (
     <div
       className={cn(
-        `relative row-span-1 rounded-sm group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-gray-100 border border-transparent flex flex-col`, 
+        `relative row-span-1 rounded-sm group/bento hover:shadow-xl transition duration-200 shadow-input   bg-gray-100 border border-transparent flex flex-col`, 
         className,
         isFullBackground ? "p-0" : "p-3" // Remove padding for index 0 and 3
       )}
@@ -73,7 +73,7 @@ export const BentoGridItem = ({
         <div className={cn("relative", !isFullBackground && "p-3")}>
           <div
             className={cn(
-              "font-bold mb-2",
+              "font-bold mb-2 text-black",
               isFullBackground && "ps-3 pt-3", // Apply ps-3 and pt-3 for index 0 and 3
               textColor
             )}
@@ -82,7 +82,7 @@ export const BentoGridItem = ({
           </div>
           <div
             className={cn(
-              "font-normal text-xs",
+              "font-normal text-xs text-black",
               isFullBackground && "ps-3 pb-3", // Apply ps-3 and pb-3 for index 0 and 3
               textColor
             )}
