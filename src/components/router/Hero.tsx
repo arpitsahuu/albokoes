@@ -18,7 +18,7 @@ const Hero = () => {
       </p>
       <div className="flex  flex-col items-center sm:flex-row w-full px-5 sm:px-[44px] text-[#003e52] justify-center gap-3 sm:gap-8">
         <Link
-          href={"/product"}
+          href={"/products"}
           className="flex gap-2 items-center border border-green-400 rounded-full px-4 py-2"
         >
           {" "}
