@@ -128,7 +128,7 @@ const Footer = () => {
                     <hr className="h-px my-6 bg-gray-200 border-none" />
                     <div>
                         <p className="text-center text-gray-500">
-                            &copy; Brand 2020 - All rights reserved
+                            &copy; Brand 2024 - All rights reserved
                         </p>
                     </div>
                 </div>
