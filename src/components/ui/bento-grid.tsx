@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import React from "react";
 
 export const BentoGrid = ({
@@ -27,6 +28,7 @@ export const BentoGridItem = ({
   header,
   icon,
   index,
+  url,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -34,6 +36,7 @@ export const BentoGridItem = ({
   header?: string;
   icon?: React.ReactNode;
   index: number;
+  url?:string;
 }) => {
   const isFullBackground = index === 0 || index === 3;
 
@@ -89,16 +92,16 @@ export const BentoGridItem = ({
           >
             {description}
           </div>
-          {(index === 1 || index === 2) && (
-            <a
-              href="#"
+          {(index === 1 || index === 2) && url && (
+            <Link
+              href={url}
               className={cn(
                 "block mt-3 text-sm font-semibold text-black",
                 "underline hover:text-gray-800"
               )}
             >
               Learn more
-            </a>
+            </Link>
           )}
         </div>
       </div>

@@ -16,7 +16,7 @@ const Footer = () => {
                                     </span>
                                 </Link>
                                 <p className="max-w-sm mt-2 text-gray-500">
-                                    Join 31,000+ others and never miss out on new tips, tutorials, and more.
+                                    Empowering Strategic Consulting and Innovations for a Sustainable World
                                 </p>
                                 <div className="flex mt-6 -mx-2">
                                     <Link
@@ -69,19 +69,19 @@ const Footer = () => {
                                 <div>
                                     <h3 className="text-gray-700 uppercase">Products </h3>
                                     <Link href="Products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        EcoPulse 
+                                        EcoPulse
                                     </Link>
                                     <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        SustainX 
+                                        SustainX
                                     </Link>
                                     <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        AquaInnovate 
+                                        AquaInnovate
                                     </Link>
                                     <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        CircularGenesis 
+                                        CircularGenesis
                                     </Link>
                                     <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        EcoElevate 
+                                        EcoElevate
                                     </Link>
                                 </div>
                                 <div>
@@ -128,7 +128,7 @@ const Footer = () => {
                     <hr className="h-px my-6 bg-gray-200 border-none" />
                     <div>
                         <p className="text-center text-gray-500">
-                            &copy; Brand 2024 - All rights reserved
+                            &copy; Albokoes | EnviroSustain 2024 - All rights reserved
                         </p>
                     </div>
                 </div>

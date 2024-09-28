@@ -16,6 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "../../hooks/use.outside.click";
 import { revalidatePath } from 'next/cache'
+import { useRouter } from 'next/navigation'
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -33,7 +34,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -109,7 +110,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
               "max-w-7xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
-            {items.map((item, index) => (
+            { items.length != 0 && items.map((item, index) => (
               <motion.div
                 initial={{
                   opacity: 0,
@@ -159,14 +160,14 @@ export const Card = ({
   index,
   layout = false,
 }: {
-  card: Card;
+  card: any;
   index: number;
   layout?: boolean;
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { onCardClose, currentIndex } = useContext(CarouselContext);
-
+  const router = useRouter()
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -186,8 +187,8 @@ export const Card = ({
 
   useOutsideClick(containerRef, () => handleClose());
 
-  const handleOpen = ({id}:any) => {
-    revalidatePath(`/products/products/${1}`) // Update cached posts
+  const handleOpen = (id:any) => {
+    router.push(`services/service/${id}`)
   };
 
   const handleClose = () => {
@@ -239,7 +240,7 @@ export const Card = ({
       </AnimatePresence>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        onClick={() => handleOpen(1)}
+        onClick={() => handleOpen(card?._id)}
         className="rounded-sm bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
@@ -248,21 +249,23 @@ export const Card = ({
             layoutId={layout ? `category-${card.category}` : undefined}
             className="text-white text-xl sm:text-2xl font-semibold text-left"
           >
-            {card.category}
+            {card.title}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
             className="text-white text-sm md:text-lg max-w-xs text-left [text-wrap:balance]  mt-2"
           >
-            {card.title}
+            {card.headline}
           </motion.p>
         </div>
-        <BlurImage
-          src={card.src}
-          alt={card.title}
-          fill
-          className="object-cover absolute z-10 inset-0 rounded-none"
-        />
+        {card?.image.url &&
+          <BlurImage
+            src={card.image.url}
+            alt={card.title}
+            fill
+            className="object-cover absolute z-10 inset-0 rounded-none"
+          />
+        }
       </motion.button>
     </>
   );

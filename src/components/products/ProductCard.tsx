@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { title } from 'process';
 import React from 'react'
 
@@ -7,9 +8,10 @@ type ProductCardProps = {
     title: string;
     category: string;
     discription?: string;
+    link:string
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({ image, title, category, discription }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ image, title, category, discription,link }) => {
     return (
         <article className="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
             <a
@@ -37,12 +39,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, category, discr
                     {discription}
                 </p>
                 <div>
-                    <a
-                        href="#"
+                    <Link
+                        href={link}
                         className=" font-semibold text-blue-500 transition duration-100 hover:text-blue-600"
                     >
                         Read more...
-                    </a>
+                    </Link>
                 </div>
             </div>
         </article>
