@@ -96,7 +96,7 @@ const OurTeam = () => {
                 <h3 className="text-xl font-bold tracking-tight text-gray-900 ">
                   <a href="#">Mr. Vinay S</a>
                 </h3>
-                <span className="text-gray-500 ">Founder & Software Expert, tnpLab </span>
+                <span className="text-gray-500 ">BE/M.Tech (Computer Science & Engineering)</span>
                 <p className="mt-3 mb-4 font-light text-gray-500 ">Founder & Software Expert, tnpLab</p>
               </div>
             </div>   
