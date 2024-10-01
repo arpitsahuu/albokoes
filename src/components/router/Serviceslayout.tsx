@@ -9,7 +9,6 @@ export default function ServiceCardsCarousel() {
     {},
     { refetchOnMountOrArgChange: true }
   );
-  console.log(servicesData?.services)
 
   const cards = servicesData?.services?.map((card: any, index: any) => (
     <Card key={card._id} card={card} index={index} />

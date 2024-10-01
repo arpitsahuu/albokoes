@@ -1,8 +1,13 @@
 "use client";
 import React from 'react';
 import Link from 'next/link'; // Import Link from next/link
+import { useGetAllProductsQuery } from '@/store/service/serviceApi';
 
 const Footer = () => {
+    const { isLoading, data: servicesData, refetch } = useGetAllProductsQuery(
+        {},
+        { refetchOnMountOrArgChange: true }
+    );
     return (
         <>
             <div className="bg-white mt-16">
@@ -10,10 +15,8 @@ const Footer = () => {
                     <div className="lg:flex">
                         <div className="w-full -mx-6 lg:w-2/5">
                             <div className="px-6">
-                                <Link href="/"> {/* Use Link instead of a */}
-                                    <span className="self-center text-sm sm:text-2xl font-semibold whitespace-nowrap text-[#003e52]">
-                                        Albokoes | <span className="text-[#00ce7d]"> EnviroSustain</span>
-                                    </span>
+                                <Link href="/" className='text-[#eb5e0a]'> {/* Use Link instead of a */}
+                                    Albokoes  <span className="text-[#003e52]">|</span> <span className="text-[#00ce7d]"> Enviro</span><span className="text-[#003e52]">Sustain</span>
                                 </Link>
                                 <p className="max-w-sm mt-2 text-gray-500">
                                     Empowering Strategic Consulting and Innovations for a Sustainable World
@@ -67,22 +70,14 @@ const Footer = () => {
                         <div className="mt-6 lg:mt-0 lg:flex-1">
                             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                                 <div>
-                                    <h3 className="text-gray-700 uppercase">Products </h3>
-                                    <Link href="Products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        EcoPulse
-                                    </Link>
-                                    <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        SustainX
-                                    </Link>
-                                    <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        AquaInnovate
-                                    </Link>
-                                    <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        CircularGenesis
-                                    </Link>
-                                    <Link href="/products" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        EcoElevate
-                                    </Link>
+                                    <h3 className="text-gray-700 uppercase">Services </h3>
+                                    {servicesData?.services.length != 0 &&
+                                        servicesData?.services.map((service: any, index: any) => (
+                                            <Link key={service._id} href={`/services/service/${service._id}`} className="block mt-2 text-sm text-gray-600 hover:underline">
+                                                {service.title}
+                                            </Link>
+                                        ))
+                                    }
                                 </div>
                                 <div>
                                     <h3 className="text-gray-700 uppercase">About</h3>
@@ -105,10 +100,13 @@ const Footer = () => {
                                         Tech
                                     </Link>
                                     <Link href="#" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        Music
+                                        Climate change
                                     </Link>
                                     <Link href="#" className="block mt-2 text-sm text-gray-600 hover:underline">
-                                        Videos
+                                        Sustainability
+                                    </Link>
+                                    <Link href="#" className="block mt-2 text-sm text-gray-600 hover:underline">
+                                        Regulations
                                     </Link>
                                 </div>
 
@@ -119,7 +117,11 @@ const Footer = () => {
                                     </span>
                                     <span className="block mt-2 text-sm text-gray-600 hover:underline">
 
-                                        dr.vs2219@albokoes.com
+                                        dr.vip2s@albokoes.com
+                                    </span>
+                                    <span className="block mt-2 text-sm text-gray-600 hover:underline">
+
+                                        social@albokoes.com
                                     </span>
                                 </div>
                             </div>
