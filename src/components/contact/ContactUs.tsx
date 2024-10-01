@@ -70,7 +70,7 @@ const ContactUs = () => {
                                             Our Location
                                         </h4>
                                         <p className="text-base text-body-color dark:text-dark-6">
-                                            99 S.t Jomblo Park Pekanbaru 28292. Indonesia
+                                        Plot No. 194/1, Neelbad, Bhopal, Madhya Pradesh - 462044, India
                                         </p>
                                     </div>
                                 </div>

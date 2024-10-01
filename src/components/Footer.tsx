@@ -123,6 +123,10 @@ const Footer = () => {
 
                                         social@albokoes.com
                                     </span>
+                                    <span className="block mt-2 text-sm text-gray-600 hover:underline">
+
+                                        albokoesenvirosustain@gmail.com
+                                    </span>
                                 </div>
                             </div>
                         </div>
