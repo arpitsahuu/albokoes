@@ -117,10 +117,6 @@ const Footer = () => {
                                     </span>
                                     <span className="block mt-2 text-sm text-gray-600 hover:underline">
 
-                                        dr.vip2s@albokoes.com
-                                    </span>
-                                    <span className="block mt-2 text-sm text-gray-600 hover:underline">
-
                                         social@albokoes.com
                                     </span>
                                     <span className="block mt-2 text-sm text-gray-600 hover:underline">
